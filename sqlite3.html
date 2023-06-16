@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.4.7.2 (Linux)"/>
+	<meta name="created" content="2023-06-16T14:21:19.175404707"/>
+	<meta name="changed" content="2023-06-16T14:27:00.332281724"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 0.53cm; margin-right: 0.56cm; margin-top: 0.71cm; margin-bottom: 0.49cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Sans", sans-serif; font-size: 18pt; font-weight: bold }
+		h1.cjk { font-family: "Source Han Sans CN"; font-size: 18pt; font-weight: bold }
+		h1.ctl { font-family: "Droid Sans Devanagari"; font-size: 18pt; font-weight: bold }
+		code { font-family: "Liberation Mono", monospace }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" style="page-break-before: always">
+<code>import sqlite3</code></h1>
+<pre style="line-height: 100%">
+<code><b># Установка соединения с базой данных</b></code>
+<code>conn = sqlite3.connect('database.db')</code>
+
+<code><b># Создание курсора для выполнения SQL-запросов</b></code>
+<code>cursor = conn.cursor()</code>
+
+<code><b># Создание таблицы</b></code>
+<code>create_table_query = '''</code>
+<code>CREATE TABLE IF NOT EXISTS employees (</code>
+<code>    id INTEGER PRIMARY KEY,</code>
+<code>    name TEXT,</code>
+<code>    age INTEGER,</code>
+<code>    position TEXT</code>
+<code>)</code>
+<code>'''</code>
+<code>cursor.execute(create_table_query)</code>
+
+<code><b># Вставка данных в таблицу</b></code>
+<code>insert_query = '''</code>
+<code>INSERT INTO employees (name, age, position)</code>
+<code>VALUES (?, ?, ?)</code>
+<code>'''</code>
+<code>data = ('John Doe', 30, 'Manager')</code>
+<code>cursor.execute(insert_query, data)</code>
+
+<code><b># Выполнение SELECT-запроса</b></code>
+<code>select_query = 'SELECT * FROM employees'</code>
+<code>cursor.execute(select_query)</code>
+<code>rows = cursor.fetchall()</code>
+
+<code>for row in rows:</code>
+<code>    print(row)</code>
+
+<code><b># Обновление данных</b></code>
+<code>update_query = 'UPDATE employees SET position = ? WHERE id = ?'</code>
+<code>data = ('Supervisor', 1)</code>
+<code>cursor.execute(update_query, data)</code>
+
+<code><b># Удаление данных</b></code>
+<code>delete_query = 'DELETE FROM employees WHERE id = ?'</code>
+<code>data = (1,)</code>
+<code>cursor.execute(delete_query, data)</code>
+
+<code><b># Подтверждение изменений и закрытие соединения</b></code>
+<code>conn.commit()</code>
+<code>conn.close()</code>
+<code><b># Выполнение SELECT-запроса с условием</b></code>
+<code>select_query = 'SELECT * FROM employees WHERE age &gt; ?'</code>
+<code>data = (25,)</code>
+<code>cursor.execute(select_query, data)</code>
+<code>rows = cursor.fetchall()</code>
+<code>for row in rows:</code>
+<code>    print(row)</code>
+<code><b># Выполнение JOIN-запроса</b></code>
+<code>join_query = '''</code>
+<code>SELECT employees.name, departments.department_name</code>
+<code>FROM employees</code>
+<code>JOIN departments ON employees.department_id = departments.id</code>
+<code>'''</code>
+<code>cursor.execute(join_query)</code>
+<code>rows = cursor.fetchall()</code>
+
+<code>for row in rows:</code>
+<code>    print(row)</code>
+<code><b># Выполнение запроса с использованием параметров из списка</b></code>
+<code>parameters = [30, 'Manager']</code>
+<code>parameterized_query = '''</code>
+<code>SELECT * FROM employees</code>
+<code>WHERE age = ? AND position = ?</code>
+<code>'''</code>
+<code>cursor.execute(parameterized_query, parameters)</code>
+<code>rows = cursor.fetchall()</code>
+
+<code>for row in rows:</code>
+<code>    print(row)</code>
+
+<code><b># Выполнение запроса с использованием LIKE-оператора</b></code>
+<code>like_query = &quot;SELECT * FROM employees WHERE name LIKE 'J%'&quot;</code>
+<code>cursor.execute(like_query)</code>
+<code>rows = cursor.fetchall()</code>
+
+<code>for row in rows:</code>
+<code>    print(row)</code>
+
+<code><b># Закрытие соединения с базой данных</b></code>
+<code>conn.close()</code></pre>
+</body>
+</html>

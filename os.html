@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.4.7.2 (Linux)"/>
+	<meta name="created" content="2023-06-16T14:21:19.175404707"/>
+	<meta name="changed" content="2023-06-16T14:24:21.607277517"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 0.53cm; margin-right: 0.56cm; margin-top: 0.71cm; margin-bottom: 0.49cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Sans", sans-serif; font-size: 18pt; font-weight: bold }
+		h1.cjk { font-family: "Source Han Sans CN"; font-size: 18pt; font-weight: bold }
+		h1.ctl { font-family: "Droid Sans Devanagari"; font-size: 18pt; font-weight: bold }
+		code { font-family: "Liberation Mono", monospace }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" link="#000080" vlink="#800000" dir="ltr"><h1 class="western">
+<code>import os</code></h1>
+<pre style="line-height: 100%">
+<code><b># Получить текущую рабочую директорию</b></code>
+<code>current_dir = os.getcwd()</code>
+
+<code><b># Сменить текущую рабочую директорию</b></code>
+<code>os.chdir('/path/to/directory')</code>
+
+<code><b># Получить список файлов и папок в директории</b></code>
+<code>file_list = os.listdir('/path/to/directory')</code>
+
+<code><b># Создать новую папку</b></code>
+<code>os.mkdir('/path/to/new_directory')</code>
+
+<code><b># Создать новые папки рекурсивно</b></code>
+<code>os.makedirs('/path/to/new_directory/subdirectory', exist_ok=True)</code>
+
+<code><b># Проверить, существует ли файл или папка</b></code>
+<code>file_exists = os.path.exists('/path/to/file_or_directory')</code>
+
+<code><b># Проверить, является ли путь файлом</b></code>
+<code>is_file = os.path.isfile('/path/to/file')</code>
+
+<code><b># Проверить, является ли путь папкой</b></code>
+<code>is_directory = os.path.isdir('/path/to/directory')</code>
+
+<code><b># Получить абсолютный путь к файлу или папке</b></code>
+<code>absolute_path = os.path.abspath('file_or_directory')</code>
+
+<code><b># Объединить пути</b></code>
+<code>path = os.path.join('/path/to', 'file_or_directory')</code>
+
+<code><b># Разделить путь на базовую часть и имя файла или папки</b></code>
+<code>base_path, file_name = os.path.split('/path/to/file_or_directory')</code>
+
+<code><b># Разделить расширение файла от его имени</b></code>
+<code>file_name, file_extension = os.path.splitext('file.ext')</code>
+
+<code><b># Удалить файл</b></code>
+<code>os.remove('/path/to/file')</code>
+
+<code><b># Переименовать файл или папку</b></code>
+<code>os.rename('/path/to/old_name', '/path/to/new_name')</code>
+
+<code><b># Удалить пустую папку</b></code>
+<code>os.rmdir('/path/to/empty_directory')</code>
+
+<code><b># Удалить папку и все ее содержимое рекурсивно</b></code>
+<code>os.removedirs('/path/to/directory')</code>
+
+<code><b># Получить информацию о файле</b></code>
+<code>file_info = os.stat('/path/to/file')</code>
+
+<code><b># Получить размер файла в байтах</b></code>
+<code>file_size = file_info.st_size</code>
+
+<code><b># Получить время последней модификации файла в формате timestamp</b></code>
+<code>modification_time = file_info.st_mtime</code>
+<code><b># Получить имя текущего пользователя</b></code>
+<code>current_user = os.getlogin()</code>
+
+<code><b># Создать символическую ссылку</b></code>
+<code>os.symlink('/path/to/target', '/path/to/symlink')</code>
+
+<code><b># Получить информацию о файловой системе, на которой расположен путь</b></code>
+<code>file_system_info = os.statvfs('/path/to/directory')</code>
+
+
+<code><b># Получить имя домашней директории текущего пользователя</b></code>
+<code>home_directory = os.path.expanduser('~')</code>
+
+<code><b># Выполнить команду в терминале</b></code>
+<code>os.system('command')</code>
+
+<code><b># Получить переменные окружения</b></code>
+<code>env_variable = os.environ.get('VAR_NAME')</code>
+
+<code><b># Установить переменную окружения</b></code>
+<code>os.environ['VAR_NAME'] = 'value'</code>
+
+<code><b># Удалить переменную окружения</b></code>
+<code>del os.environ['VAR_NAME']</code>
+
+<code><b># Получить список аргументов командной строки</b></code>
+<code>command_line_args = sys.argv</code>
+
+<code><b># Выйти из программы</b></code>
+<code>os.exit()</code>
+
+<code><b># Запустить другую программу</b></code>
+<code>os.execvp('program', ['arg1', 'arg2'])</code>
+
+<code><b># Изменить права доступа к файлу или папке</b></code>
+<code>os.chmod('/path/to/file', 0o755)</code>
+
+<code><b># Получить текущий процессорный идентификатор (PID)</b></code>
+<code>pid = os.getpid()</code>
+
+<code><b># Получить идентификатор родительского процесса (PPID)</b></code>
+<code>ppid = os.getppid()</code>
+
+<code><b># Получить текущую рабочую группу процесса</b></code>
+<code>process_group = os.getpgrp()</code></pre>
+</body>
+</html>

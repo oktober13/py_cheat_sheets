@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.4.7.2 (Linux)"/>
+	<meta name="created" content="2023-06-16T14:21:19.175404707"/>
+	<meta name="changed" content="2023-06-16T14:33:40.654899913"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 0.53cm; margin-right: 0.56cm; margin-top: 0.71cm; margin-bottom: 0.49cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Sans", sans-serif; font-size: 18pt; font-weight: bold }
+		h1.cjk { font-family: "Source Han Sans CN"; font-size: 18pt; font-weight: bold }
+		h1.ctl { font-family: "Droid Sans Devanagari"; font-size: 18pt; font-weight: bold }
+		code { font-family: "Liberation Mono", monospace }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" style="page-break-before: always">
+Кеширование в Python</h1>
+<pre style="line-height: 100%"><font size="2" style="font-size: 10pt"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>Использование декоратора </b></font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>lru_cache</b></font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b> из модуля </b></font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>functools</b></font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>:</b></font></font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">from functools import lru_cache</font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">@lru_cache(maxsize=None)</font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">def cached_function(arguments):</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"># Логика функции</font></font></pre><p style="line-height: 100%; margin-bottom: 0cm">
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>Установка
+максимального размера кеша:</b></font></font></p>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">По
+	умолчанию </font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">maxsize=None</font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">,
+	что означает неограниченный размер.</font></font></p>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">Можно
+	указать конкретное число, например,
+	</font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">maxsize=100</font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">,
+	чтобы ограничить количество сохраняемых
+	результатов.</font></font></p>
+</ul>
+<pre style="line-height: 100%"><font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>Использование декоратора </b></font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>cached_property</b></font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b> из модуля </b></font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>cachetools</b></font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b> для кеширования свойств:</b></font></font></font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">from cachetools import cached_property</font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">class MyClass:</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">@cached_property</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">def cached_property_name(self):</font></font>
+        <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"># Логика свойства</font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>Использование кастомного кеша с помощью класса </b></font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>Cache</b></font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b> из модуля </b></font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>cachetools</b></font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>:</b></font></font></font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">from cachetools import Cache</font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">cache = Cache(maxsize=100)</font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">def cached_function(arguments):</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">if arguments in cache:</font></font>
+        <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">return cache[arguments]</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">else:</font></font>
+        <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">result = calculate_result(arguments)</font></font>
+        <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">cache[arguments] = result</font></font>
+        <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">return result</font></font></pre><p style="line-height: 100%; margin-bottom: 0cm">
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>Очистка
+кеша:</b></font></font></p>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">Декоратор
+	</font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">lru_cache</font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">
+	автоматически управляет размером кеша.</font></font></p>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">Для
+	кастомного кеша можно использовать
+	методы </font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">cache.clear()</font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">
+	для полной очистки или </font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">cache.pop(key)</font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">
+	для удаления конкретного элемента.</font></font></p>
+</ul>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>Использование
+кеширования с файлами:</b></font></font></p>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">Можно
+	использовать модуль </font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">joblib</font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">
+	для кеширования результатов функции
+	в файлы.</font></font></p>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">Пример:</font></font></p>
+	<p style="line-height: 100%; margin-bottom: 0cm"></p>
+</ul>
+<pre style="line-height: 100%"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">from joblib import Memory</font></font>
+
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">memory = Memory(&quot;cache_directory&quot;)</font></font>
+
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">@memory.cache</font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">def cached_function(arguments):</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b># Логика функции</b></font></font></pre><p style="line-height: 100%; margin-bottom: 0cm">
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>Обработка
+исключений:</b></font></font></p>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">При
+	использовании кеша, особенно с внешними
+	ресурсами, может возникнуть необходимость
+	обрабатывать исключения, например, при
+	недоступности кеша или ошибке вычислений.</font></font></code></p>
+</ul>
+</body>
+</html>

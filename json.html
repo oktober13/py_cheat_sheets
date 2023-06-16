@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.4.7.2 (Linux)"/>
+	<meta name="created" content="2023-06-16T14:21:19.175404707"/>
+	<meta name="changed" content="2023-06-16T14:40:06.113762802"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 0.53cm; margin-right: 0.56cm; margin-top: 0.71cm; margin-bottom: 0.49cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Sans", sans-serif; font-size: 18pt; font-weight: bold }
+		h1.cjk { font-family: "Source Han Sans CN"; font-size: 18pt; font-weight: bold }
+		h1.ctl { font-family: "Droid Sans Devanagari"; font-size: 18pt; font-weight: bold }
+		code { font-family: "Liberation Mono", monospace }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" style="page-break-before: always">
+<code>Json</code></h1>
+<pre style="line-height: 100%">
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">import json</font></code></font></font>
+
+<code><font size="3" style="font-size: 12pt"><b># Сериализация объекта в JSON</b></font></code>
+<code><font size="3" style="font-size: 12pt">def serialize_to_json(obj):</font></code>
+<code>    <font size="3" style="font-size: 12pt">json_data = json.dumps(obj)</font></code>
+<code>    <font size="3" style="font-size: 12pt">return json_data</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Десериализация JSON в объект</b></font></code>
+<code><font size="3" style="font-size: 12pt">def deserialize_from_json(json_data):</font></code>
+<code>    <font size="3" style="font-size: 12pt">obj = json.loads(json_data)</font></code>
+<code>    <font size="3" style="font-size: 12pt">return obj</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Пример использования</b></font></code>
+<code><font size="3" style="font-size: 12pt">data = {</font></code>
+<code>    <font size="3" style="font-size: 12pt">'name': 'John',</font></code>
+<code>    <font size="3" style="font-size: 12pt">'age': 30,</font></code>
+<code>    <font size="3" style="font-size: 12pt">'city': 'New York'</font></code>
+<code><font size="3" style="font-size: 12pt">}</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Сериализуем объект в JSON</b></font></code>
+<code><font size="3" style="font-size: 12pt">json_data = serialize_to_json(data)</font></code>
+<code><font size="3" style="font-size: 12pt">print(json_data)</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Десериализуем JSON в объект</b></font></code>
+<code><font size="3" style="font-size: 12pt">loaded_data = deserialize_from_json(json_data)</font></code>
+<code><font size="3" style="font-size: 12pt">print(loaded_data)</font></code></pre><p style="line-height: 100%; margin-bottom: 0cm">
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">Модуль
+json в Python предоставляет функции для
+сериализации (преобразования объекта
+в формат JSON) и десериализации (преобразования
+JSON в объект).</font></code></font></font></p>
+<p><code><font size="3" style="font-size: 12pt">В приведенном
+примере у нас есть две функции:
+serialize_to_json() для сериализации объекта в
+JSON и deserialize_from_json() для десериализации
+JSON в объект. Сначала у нас есть объект
+data, содержащий информацию о человеке.
+Мы сериализуем этот объект в JSON с помощью
+функции serialize_to_json(), которая возвращает
+строку JSON. Затем мы выводим эту строку.</font></code></p>
+<p><code><font size="3" style="font-size: 12pt">Затем мы
+десериализуем JSON в объект с помощью
+функции deserialize_from_json(). Мы передаем строку
+JSON, полученную ранее, и функция возвращает
+объект Python. Мы выводим этот объект для
+проверки.</font></code></p>
+<p><code><font size="3" style="font-size: 12pt">Обратите
+внимание, что в JSON допустимы только
+определенные типы данных, такие как
+строки, числа, списки, словари и логические
+значения. Объекты, содержащие
+пользовательские классы или функции,
+не могут быть прямо сериализованы в
+JSON. Если вам нужно сериализовать более
+сложные объекты, вам может потребоваться
+предварительно преобразовать их в
+соответствующие типы данных или
+использовать специальные библиотеки,
+поддерживающие расширенную сериализацию,
+такие как pickle.</font></code></p>
+<pre style="line-height: 100%"></pre>
+</body>
+</html>

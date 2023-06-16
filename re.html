@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.4.7.2 (Linux)"/>
+	<meta name="created" content="2023-06-16T14:21:19.175404707"/>
+	<meta name="changed" content="2023-06-16T14:41:32.474182516"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 0.53cm; margin-right: 0.56cm; margin-top: 0.71cm; margin-bottom: 0.49cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Sans", sans-serif; font-size: 18pt; font-weight: bold }
+		h1.cjk { font-family: "Source Han Sans CN"; font-size: 18pt; font-weight: bold }
+		h1.ctl { font-family: "Droid Sans Devanagari"; font-size: 18pt; font-weight: bold }
+		code { font-family: "Liberation Mono", monospace }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" style="page-break-before: always">
+<code>re</code></h1>
+<pre style="line-height: 100%">
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">import re</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Поиск совпадений</b></font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">pattern = r&quot;apple&quot;</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">text = &quot;I have an apple&quot;</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">match = re.search(pattern, text)</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">if match:</font></code></font></font>
+<code>    <font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><font size="3" style="font-size: 12pt">print(&quot;Найдено совпадение!&quot;)</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">else:</font></code></font></font>
+<code>    <font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><font size="3" style="font-size: 12pt">print(&quot;Совпадение не найдено.&quot;)</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Поиск всех совпадений</b></font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">matches = re.findall(pattern, text)</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(matches)</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Замена совпадений</b></font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">new_text = re.sub(pattern, &quot;orange&quot;, text)</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(new_text)</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Использование групп</b></font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">pattern2 = r&quot;(\d{2})-(\d{2})-(\d{4})&quot;</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">date = &quot;Today is 21-05-2023&quot;</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">match2 = re.search(pattern2, date)</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">if match2:</font></code></font></font>
+<code>    <font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><font size="3" style="font-size: 12pt">day = match2.group(1)</font></code></font></font>
+<code>    <font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><font size="3" style="font-size: 12pt">month = match2.group(2)</font></code></font></font>
+<code>    <font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><font size="3" style="font-size: 12pt">year = match2.group(3)</font></code></font></font>
+<code>    <font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><font size="3" style="font-size: 12pt">print(f&quot;День: {day}, Месяц: {month}, Год: {year}&quot;)</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Разделение строки</b></font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">text2 = &quot;apple,banana,cherry&quot;</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">items = re.split(&quot;,&quot;, text2)</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(items)</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Поиск слова в начале строки</b></font></code></font></font>
+<code><font size="3" style="font-size: 12pt">pattern = r&quot;^Hello&quot;</font></code>
+<code><font size="3" style="font-size: 12pt">text = &quot;Hello, World!&quot;</font></code>
+<code><font size="3" style="font-size: 12pt">match = re.search(pattern, text)</font></code>
+<code><font size="3" style="font-size: 12pt">if match:</font></code>
+<code>    <font size="3" style="font-size: 12pt">print(&quot;Совпадение найдено в начале строки!&quot;)</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Поиск слова в конце строки</b></font></code>
+<code><font size="3" style="font-size: 12pt">pattern2 = r&quot;World$&quot;</font></code>
+<code><font size="3" style="font-size: 12pt">match2 = re.search(pattern2, text)</font></code>
+<code><font size="3" style="font-size: 12pt">if match2:</font></code>
+<code>    <font size="3" style="font-size: 12pt">print(&quot;Совпадение найдено в конце строки!&quot;)</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Игнорирование регистра</b></font></code>
+<code><font size="3" style="font-size: 12pt">pattern3 = r&quot;apple&quot;</font></code>
+<code><font size="3" style="font-size: 12pt">text2 = &quot;I have an Apple&quot;</font></code>
+<code><font size="3" style="font-size: 12pt">match3 = re.search(pattern3, text2, re.IGNORECASE)</font></code>
+<code><font size="3" style="font-size: 12pt">if match3:</font></code>
+<code>    <font size="3" style="font-size: 12pt">print(&quot;Совпадение найдено, игнорируя регистр!&quot;)</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Извлечение всех чисел из строки</b></font></code>
+<code><font size="3" style="font-size: 12pt">pattern4 = r&quot;\d+&quot;</font></code>
+<code><font size="3" style="font-size: 12pt">text3 = &quot;I have 3 apples and 5 bananas&quot;</font></code>
+<code><font size="3" style="font-size: 12pt">numbers = re.findall(pattern4, text3)</font></code>
+<code><font size="3" style="font-size: 12pt">print(numbers)</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Проверка соответствия шаблону</b></font></code>
+<code><font size="3" style="font-size: 12pt">pattern5 = r&quot;^\w+$&quot;</font></code>
+<code><font size="3" style="font-size: 12pt">words = [&quot;hello&quot;, &quot;123&quot;, &quot;Hello123&quot;, &quot;123World&quot;]</font></code>
+<code><font size="3" style="font-size: 12pt">for word in words:</font></code>
+<code>    <font size="3" style="font-size: 12pt">if re.match(pattern5, word):</font></code>
+<code>        <font size="3" style="font-size: 12pt">print(f&quot;Слово '{word}' соответствует шаблону.&quot;)</font></code>
+<code>    <font size="3" style="font-size: 12pt">else:</font></code>
+<code>        <font size="3" style="font-size: 12pt"><span style="font-weight: normal">print(f&quot;Слово '{word}' не соответствует шаблону.&quot;)</span></font></code></pre>
+</body>
+</html>

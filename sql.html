@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.4.7.2 (Linux)"/>
+	<meta name="created" content="2023-06-16T14:21:19.175404707"/>
+	<meta name="changed" content="2023-06-16T14:28:24.027088808"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 0.53cm; margin-right: 0.56cm; margin-top: 0.71cm; margin-bottom: 0.49cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Sans", sans-serif; font-size: 18pt; font-weight: bold }
+		h1.cjk { font-family: "Source Han Sans CN"; font-size: 18pt; font-weight: bold }
+		h1.ctl { font-family: "Droid Sans Devanagari"; font-size: 18pt; font-weight: bold }
+		code { font-family: "Liberation Mono", monospace }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" style="page-break-before: always">
+<code>SQL</code></h1>
+<pre style="line-height: 100%">
+<code><b>Создание таблицы:</b></code>
+<code>CREATE TABLE table_name (</code>
+<code>    column1 datatype,</code>
+<code>    column2 datatype,</code>
+<code>    column3 datatype</code>
+<code>);</code>
+<code><b>Вставка данных в таблицу:</b></code>
+<code>INSERT INTO table_name (column1, column2, column3) VALUES (value1, value2, value3);</code>
+
+<code><b>Обновление данных в таблице:</b></code>
+<code>UPDATE table_name SET column1 = new_value1, column2 = new_value2 WHERE condition;</code>
+
+<code><b>Удаление данных из таблицы:</b></code>
+<code>DELETE FROM table_name WHERE condition;</code>
+
+<code><b>Выборка данных из таблицы:</b></code>
+<code>SELECT column1, column2 FROM table_name WHERE condition;</code>
+
+<code><b>Фильтрация данных с использованием условий:</b></code>
+<code>SELECT column1, column2 FROM table_name WHERE column1 = value1 AND column2 &gt; value2;</code>
+
+<code><b>Сортировка результатов:</b></code>
+<code>SELECT column1, column2 FROM table_name ORDER BY column1 ASC, column2 DESC;</code>
+
+<code><b>Объединение таблиц:</b></code>
+<code>SELECT column1, column2 FROM table1 JOIN table2 ON table1.column = table2.column;</code>
+
+<code><b>Группировка данных и агрегатные функции:</b></code>
+<code>SELECT column1, COUNT(column2) FROM table_name GROUP BY column1;</code>
+
+<code><b>Использование подзапросов:</b></code>
+<code>SELECT column1, column2 FROM table_name WHERE column1 IN (SELECT column1 FROM table2);</code>
+
+<code><b>Создание индекса:</b></code>
+<code>CREATE INDEX index_name ON table_name (column1, column2);</code>
+
+<code><b>Создание представления:</b></code>
+<code>CREATE VIEW view_name AS SELECT column1, column2 FROM table_name WHERE condition;</code>
+
+<code><b>Создание хранимых процедур:</b></code>
+<code>CREATE PROCEDURE procedure_name</code>
+<code>AS</code>
+<code>BEGIN</code>
+<code>    -- SQL statements</code>
+<code>END;</code>
+
+<code><b>Создание триггера:</b></code>
+<code>CREATE TRIGGER trigger_name</code>
+<code>BEFORE INSERT ON table_name</code>
+<code>FOR EACH ROW</code>
+<code>BEGIN</code>
+<code>    -- SQL statements</code>
+<code>END;</code>
+
+<code><b>Создание базы данных:</b></code>
+<code>CREATE DATABASE database_name;</code></pre>
+</body>
+</html>

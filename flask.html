@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.4.7.2 (Linux)"/>
+	<meta name="created" content="2023-06-16T14:21:19.175404707"/>
+	<meta name="changed" content="2023-06-16T14:36:43.486620756"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 0.53cm; margin-right: 0.56cm; margin-top: 0.71cm; margin-bottom: 0.49cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Sans", sans-serif; font-size: 18pt; font-weight: bold }
+		h1.cjk { font-family: "Source Han Sans CN"; font-size: 18pt; font-weight: bold }
+		h1.ctl { font-family: "Droid Sans Devanagari"; font-size: 18pt; font-weight: bold }
+		code { font-family: "Liberation Mono", monospace }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" style="page-break-before: always">
+Flask</h1>
+<pre style="line-height: 100%">
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">from flask import Flask, render_template, request</font></font>
+
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">app = Flask(__name__)</font></font>
+
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>@app.route('/')  # Декоратор для определения маршрута &quot;/&quot;</b></font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">def index():</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">return 'Привет, мир!'</font></font>
+
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>@app.route('/hello/&lt;name&gt;')  # Декоратор для определения маршрута &quot;/hello/&lt;name&gt;&quot;</b></font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">def hello(name):</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">return f'Привет, {name}!'</font></font>
+
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>@app.route('/form', methods=['GET', 'POST'])  # Декоратор для определения маршрута &quot;/form&quot;</b></font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">def form():</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">if request.method == 'POST':  # Если запрос методом POST</font></font>
+        <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">name = request.form['name']  # Получаем значение поля 'name' из формы</font></font>
+        <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">return f'Привет, {name}! Форма отправлена.'</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">return render_template('form.html')  # Выводим шаблон формы</font></font>
+
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">if __name__ == '__main__':</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">app.run(debug=True)</font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>Это пример простого приложения Flask. Маршрут </b></font></font></code><code><font size="3" style="font-size: 12pt"><b>/</b></font></code><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b> возвращает строку &quot;Привет, мир!&quot;. Маршрут </b></font></font></code><code><font size="3" style="font-size: 12pt"><b>/hello/&lt;name&gt;</b></font></code><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b> принимает параметр </b></font></font></code><code><font size="3" style="font-size: 12pt"><b>&lt;name&gt;</b></font></code><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b> и возвращает персонализированное приветствие. Маршрут </b></font></font></code><code><font size="3" style="font-size: 12pt"><b>/form</b></font></code><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b> обрабатывает GET и POST запросы. При GET запросе выводится HTML-форма, а при POST запросе получаем значение поля 'name' и возвращаем персонализированное приветствие с помощью шаблона </b></font></font></code><code><font size="3" style="font-size: 12pt"><b>form.html</b></font></code><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt"><b>.</b></font></font></code></font></font></pre>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.4.7.2 (Linux)"/>
+	<meta name="created" content="2023-06-16T14:21:19.175404707"/>
+	<meta name="changed" content="2023-06-16T14:34:12.111241857"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 0.53cm; margin-right: 0.56cm; margin-top: 0.71cm; margin-bottom: 0.49cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Sans", sans-serif; font-size: 18pt; font-weight: bold }
+		h1.cjk { font-family: "Source Han Sans CN"; font-size: 18pt; font-weight: bold }
+		h1.ctl { font-family: "Droid Sans Devanagari"; font-size: 18pt; font-weight: bold }
+		code { font-family: "Liberation Mono", monospace }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" style="page-break-before: always">
+ORM</h1>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">ORM
+(Object-Relational Mapping) в Python - это <b>подход,
+который позволяет работать с базой
+данных, используя объектно-ориентированный
+стиль программирования.</b> Вместо
+написания прямых SQL-запросов, вы работаете
+с объектами и классами, которые
+соответствуют таблицам и записям в базе
+данных.</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">ORM
+берет на себя задачи по преобразованию
+объектов Python в структуры данных базы
+данных и обратно, что позволяет вам
+более удобно работать с данными.</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">Вот
+пример:</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">Предположим,
+у вас есть таблица &quot;users&quot; в базе
+данных, которая содержит столбцы &quot;id&quot;,
+&quot;name&quot; и &quot;email&quot;. С ORM вы можете
+создать класс </font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">User</font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">,
+который будет соответствовать этой
+таблице:</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<pre style="line-height: 100%"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">from sqlalchemy import Column, Integer, String</font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">from sqlalchemy.ext.declarative import declarative_base</font></font>
+
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">Base = declarative_base()</font></font>
+
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">class User(Base):</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">__tablename__ = 'users'</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">id = Column(Integer, primary_key=True)</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">name = Column(String)</font></font>
+    <font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">email = Column(String)</font></font>
+</pre><p style="line-height: 100%; margin-bottom: 0cm">
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">В
+этом примере класс </font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">User</font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">
+наследуется от </font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">declarative_base()</font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">,
+предоставляемого SQLAlchemy. Атрибуты класса
+</font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">User</font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">
+(например, </font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">id</font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">,
+</font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">name</font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">,
+</font></font><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">email</font></font></code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">)
+соответствуют столбцам таблицы.</font></font></font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">Теперь
+вы можете использовать этот класс для
+работы с данными базы данных без
+необходимости писать SQL-запросы напрямую.
+Например, вы можете создать нового
+пользователя и сохранить его в базе
+данных:</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<pre style="line-height: 100%"><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">from sqlalchemy import create_engine</font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">from sqlalchemy.orm import sessionmaker</font></font>
+
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">engine = create_engine(&quot;database://username:password@hostname/database_name&quot;)</font></font>
+
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">Session = sessionmaker(bind=engine)</font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">session = Session()</font></font>
+
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">user = User(name='John', email='john@example.com')</font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">session.add(user)</font></font>
+<font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">session.commit()</font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font face="Liberation Mono, monospace"><font size="3" style="font-size: 12pt">ORM позволяет вам также выполнять запросы к базе данных, обновлять и удалять объекты с помощью простых методов, а также автоматически обрабатывать множество задач, связанных с базой данных.</font></font></code></font></font></pre>
+</body>
+</html>

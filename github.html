@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.4.7.2 (Linux)"/>
+	<meta name="created" content="2023-06-16T14:21:19.175404707"/>
+	<meta name="changed" content="2023-06-16T14:31:43.960435757"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 0.53cm; margin-right: 0.56cm; margin-top: 0.71cm; margin-bottom: 0.49cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Sans", sans-serif; font-size: 18pt; font-weight: bold }
+		h1.cjk { font-family: "Source Han Sans CN"; font-size: 18pt; font-weight: bold }
+		h1.ctl { font-family: "Droid Sans Devanagari"; font-size: 18pt; font-weight: bold }
+		code { font-family: "Liberation Mono", monospace }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" style="page-break-before: always">
+GitHub с Python на Linux:</h1>
+<ol>
+	<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Установка
+	Git:</b></font></font></p>
+	<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Убедитесь,
+	что Git уже установлен на вашей системе
+	Linux Manjaro. Если нет, выполните следующую
+	команду в терминале:</font></font></p>
+</ol>
+<ul>
+	<pre style="line-height: 100%"><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">sudo pacman -Syu</font></font></code>
+<code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">sudo pacman -S git</font></font></code></pre>
+</ul>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Создание
+	репозитория:</b></font></font></p>
+</ul>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Перейдите
+	на веб-сайт GitHub (<a href="https://github.com/" target="_new">https://github.com/</a>)
+	и создайте новый репозиторий.</font></font></p>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">В
+	терминале перейдите в каталог вашего
+	проекта и выполните следующие команды
+	для инициализации репозитория и
+	связывания его с удаленным репозиторием
+	GitHub:</font></font></p>
+</ul>
+<ul>
+	<pre style="line-height: 100%"><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">git init</font></font></code>
+<code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">git remote add origin &lt;repository_url&gt;</font></font></code></pre><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Замените
+	</font></font><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">&lt;repository_url&gt;</font></font></code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">
+	на URL вашего удаленного репозитория
+	GitHub.</font></font></p>
+</ul>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Работа
+	с репозиторием:</b></font></font></p>
+</ul>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Получение
+	изменений из удаленного репозитория:</b></font></font></p>
+</ul>
+<ul>
+	<pre style="line-height: 100%"><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">git pull origin &lt;branch_name&gt;</font></font></code></pre>
+</ul>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Замените
+</font></font><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">&lt;branch_name&gt;</font></font></code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">
+на имя ветки, из которой вы хотите
+получить изменения (например, </font></font><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">main</font></font></code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">).</font></font></p>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Добавление
+	файлов в индекс:</b></font></font></p>
+</ul>
+<pre style="line-height: 100%"><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">	git add &lt;file_path&gt;</font></font></code></pre><p style="line-height: 100%; margin-bottom: 0cm">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Замените
+</font></font><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">&lt;file_path&gt;</font></font></code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">
+на путь к файлу или каталогу, который
+вы хотите добавить в индекс. Для добавления
+всех файлов используйте </font></font><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">.</font></font></code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">:</font></font></p>
+<ul>
+	<pre style="line-height: 100%"><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">git add .</font></font></code></pre>
+</ul>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Зафиксировать
+	изменения:</b></font></font></p>
+</ul>
+<ul>
+	<pre style="line-height: 100%"><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">git commit -m &quot;Commit message&quot;</font></font></code></pre>
+</ul>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Замените
+</font></font><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">&quot;Commit
+message&quot;</font></font></code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">
+на свое сообщение о коммите, описывающее
+внесенные изменения.</font></font></p>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Отправка
+	изменений в удаленный репозиторий:</b></font></font></p>
+</ul>
+<ul>
+	<pre style="line-height: 100%"><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">git push origin &lt;branch_name&gt;</font></font></code></pre>
+</ul>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Замените
+</font></font><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">&lt;branch_name&gt;</font></font></code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">
+на имя ветки, в которую вы хотите отправить
+изменения.</font></font></p>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Просмотр
+	состояния репозитория и изменений:</b></font></font></p>
+</ul>
+<ul>
+	<pre style="line-height: 100%"><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">git status</font></font></code></pre>
+</ul>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Просмотр
+	истории коммитов:</b></font></font></p>
+</ul>
+<ul>
+	<pre style="line-height: 100%"><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">git log</font></font></code></pre>
+</ul>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Создание
+	новой ветки:</b></font></font></p>
+</ul>
+<ul>
+	<pre style="line-height: 100%"><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">git branch &lt;branch_name&gt;</font></font></code></pre>
+</ul>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Замените
+</font></font><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">&lt;branch_name&gt;</font></font></code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">
+на имя новой ветки.</font></font></p>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Переключение
+	на другую ветку:</b></font></font></p>
+</ul>
+<ul>
+	<pre style="line-height: 100%"><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">git checkout &lt;branch_name&gt;</font></font></code></pre><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Замените
+	</font></font><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">&lt;branch_name&gt;</font></font></code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">
+	на имя ветки, на которую вы хотите
+	переключиться.</font></font></p>
+</ul>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Работа
+	с отзывами и слияниями:</b></font></font></p>
+</ul>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Создание
+	отзыва (Pull Request) на GitHub:</b></font></font></p>
+	<ul>
+		<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Перейдите
+		на веб-сайт GitHub и выберите свою ветку
+		для создания отзыва.</font></font></p>
+		<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Нажмите
+		кнопку &quot;New Pull Request&quot; и следуйте
+		инструкциям для создания отзыва.</font></font></p>
+	</ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Разрешение
+	конфликтов слияния:</b></font></font></p>
+	<ul>
+		<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Если
+		при попытке слияния двух веток возникают
+		конфликты, откройте соответствующие
+		файлы и разрешите конфликты вручную.</font></font></p>
+		<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">После
+		разрешения конфликтов выполните
+		команду:</font></font></p>
+	</ul>
+</ul>
+<ul>
+	<pre style="line-height: 100%"><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">git add &lt;file_path&gt;</font></font></code></pre><p style="line-height: 100%; margin-bottom: 0cm">
+	<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">для
+	добавления измененных файлов в индекс.</font></font></p>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Затем
+	выполните коммит и отправку изменений.</font></font></p>
+</ul>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Просмотр
+	и управление отзывами и слияниями:</b></font></font></p>
+</ul>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm"><code><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Используйте
+	веб-интерфейс GitHub для просмотра,
+	комментирования и управления отзывами
+	и слияниями.</font></font></code></p>
+</ul>
+</body>
+</html>

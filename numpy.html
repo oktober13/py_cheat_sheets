@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.4.7.2 (Linux)"/>
+	<meta name="created" content="2023-06-16T14:21:19.175404707"/>
+	<meta name="changed" content="2023-06-16T14:40:54.637391677"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 0.53cm; margin-right: 0.56cm; margin-top: 0.71cm; margin-bottom: 0.49cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+		h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Sans", sans-serif; font-size: 18pt; font-weight: bold }
+		h1.cjk { font-family: "Source Han Sans CN"; font-size: 18pt; font-weight: bold }
+		h1.ctl { font-family: "Droid Sans Devanagari"; font-size: 18pt; font-weight: bold }
+		code { font-family: "Liberation Mono", monospace }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" style="page-break-before: always">
+<code>Numpy</code></h1>
+<pre style="line-height: 100%">
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">import numpy as np</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Создание одномерного массива</b></font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">arr1 = np.array([1, 2, 3, 4, 5])</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(arr1)</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Создание двумерного массива</b></font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">arr2 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(arr2)</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Получение размерности массива</b></font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(arr2.shape)</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Получение общего количества элементов в массиве</b></font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(arr2.size)</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Получение типа данных элементов массива</b></font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(arr2.dtype)</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Изменение формы массива</b></font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">reshaped_arr = arr1.reshape((5, 1))</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(reshaped_arr)</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Индексация и срезы</b></font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(arr1[0])        # Получение элемента по индексу</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(arr2[1, 2])     # Получение элемента по индексу строки и столбца</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(arr1[:3])       # Получение первых трех элементов</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(arr2[1:])       # Получение всех строк начиная со второй</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(arr2[:, 1])     # Получение всех элементов второго столбца</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Математические операции</b></font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(np.sum(arr1))            # Сумма всех элементов</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(np.mean(arr2))           # Среднее значение элементов</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(np.max(arr1))            # Максимальное значение</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(np.min(arr2))            # Минимальное значение</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(np.std(arr1))            # Стандартное отклонение</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(np.exp(arr1))            # Экспоненциальная функция</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(np.sqrt(arr2))           # Квадратный корень</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Логические операции</b></font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(np.logical_and(arr1 &gt; 2, arr1 &lt; 5))     # Логическое И</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(np.logical_or(arr1 &gt; 2, arr1 &lt; 5))      # Логическое ИЛИ</font></code></font></font>
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt">print(np.logical_not(arr1 &gt; 2))               # Логическое НЕ</font></code></font></font>
+
+<font face="Liberation Mono, monospace"><font size="2" style="font-size: 10pt"><code><font size="3" style="font-size: 12pt"><b># Генерация массива с заданным диапазоном значений</b></font></code></font></font>
+<code><font size="3" style="font-size: 12pt">arr = np.arange(1, 11)</font></code>
+<code><font size="3" style="font-size: 12pt">print(arr)</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Генерация массива с заданным числом элементов</b></font></code>
+<code><font size="3" style="font-size: 12pt">arr2 = np.linspace(0, 1, 10)</font></code>
+<code><font size="3" style="font-size: 12pt">print(arr2)</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Работа с многомерными массивами</b></font></code>
+<code><font size="3" style="font-size: 12pt">arr3 = np.array([[1, 2, 3], [4, 5, 6]])</font></code>
+<code><font size="3" style="font-size: 12pt">print(arr3.shape)     # Размерность массива</font></code>
+<code><font size="3" style="font-size: 12pt">print(arr3.ndim)      # Количество измерений массива</font></code>
+<code><font size="3" style="font-size: 12pt">print(arr3.size)      # Количество элементов в массиве</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Транспонирование массива</b></font></code>
+<code><font size="3" style="font-size: 12pt">arr4 = np.array([[1, 2, 3], [4, 5, 6]])</font></code>
+<code><font size="3" style="font-size: 12pt">transposed_arr = arr4.T</font></code>
+<code><font size="3" style="font-size: 12pt">print(transposed_arr)</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Сложение и умножение массивов</b></font></code>
+<code><font size="3" style="font-size: 12pt">arr5 = np.array([1, 2, 3])</font></code>
+<code><font size="3" style="font-size: 12pt">arr6 = np.array([4, 5, 6])</font></code>
+<code><font size="3" style="font-size: 12pt">sum_arr = arr5 + arr6       # Поэлементное сложение</font></code>
+<code><font size="3" style="font-size: 12pt">mul_arr = arr5 * arr6       # Поэлементное умножение</font></code>
+<code><font size="3" style="font-size: 12pt">print(sum_arr)</font></code>
+<code><font size="3" style="font-size: 12pt">print(mul_arr)</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Применение функций к массивам</b></font></code>
+<code><font size="3" style="font-size: 12pt">arr7 = np.array([1, 2, 3])</font></code>
+<code><font size="3" style="font-size: 12pt">exp_arr = np.exp(arr7)       # Применение экспоненциальной функции</font></code>
+<code><font size="3" style="font-size: 12pt">sqrt_arr = np.sqrt(arr7)     # Применение квадратного корня</font></code>
+<code><font size="3" style="font-size: 12pt">print(exp_arr)</font></code>
+<code><font size="3" style="font-size: 12pt">print(sqrt_arr)</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Сортировка массивов</b></font></code>
+<code><font size="3" style="font-size: 12pt">arr8 = np.array([3, 2, 1])</font></code>
+<code><font size="3" style="font-size: 12pt">sorted_arr = np.sort(arr8)       # Сортировка массива по возрастанию</font></code>
+<code><font size="3" style="font-size: 12pt">print(sorted_arr)</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Индексация и срезы для многомерных массивов</b></font></code>
+<code><font size="3" style="font-size: 12pt">arr9 = np.array([[1, 2, 3], [4, 5, 6]])</font></code>
+<code><font size="3" style="font-size: 12pt">print(arr9[0, 1])       # Получение элемента по индексу строки и столбца</font></code>
+<code><font size="3" style="font-size: 12pt">print(arr9[:, 1])       # Получение всех элементов второго столбца</font></code>
+
+<code><font size="3" style="font-size: 12pt"><b># Математические операции с многомерными массивами</b></font></code>
+<code><font size="3" style="font-size: 12pt">arr10 = np.array([[1, 2], [3, 4]])</font></code>
+<code><font size="3" style="font-size: 12pt">sum_axis0 = np.sum(arr10, axis=0)      # Сумма по оси 0 (столбцы)</font></code>
+<code><font size="3" style="font-size: 12pt">sum_axis1 = np.sum(arr10, axis=1)      # Сумма по оси 1 (строки)</font></code>
+<code><font size="3" style="font-size: 12pt">print(sum_axis0)</font></code>
+<code><font size="3" style="font-size: 12pt"><span style="font-weight: normal">print(sum_axis1)</span></font></code></pre>
+</body>
+</html>
