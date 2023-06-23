@@ -1,5 +1,5 @@
 # Jinja
-
+```
 {% comment %} Комментарий {% endcomment %}
 
 {% if condition %}
@@ -80,3 +80,4 @@
 {% set variable %}value{% endset %}  ## Определение переменной с блоком содержимого
 
 {% include "template.html" with variable=value %}  ## Включение другого шаблона с передачей переменных
+```
