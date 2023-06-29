@@ -1,4 +1,4 @@
-Commit type	Emoji
+*Commit type	Emoji*
 
 Code review changes	           👌️ `:ok_hand:`
 
