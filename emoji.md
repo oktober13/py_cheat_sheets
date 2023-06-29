@@ -92,7 +92,7 @@ Package.json in JS	           📦️ `:package:`
 
 Merging branches	           🔀️ `:twisted_rightwards_arrows:`
 
-Bad code / need improv.	       💩️ `:hankey:`
+Bad code / need improv        💩️ `:hankey:`
 
 Reverting changes	           ⏪ `:rewind:`
 
